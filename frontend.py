@@ -26,10 +26,9 @@ if st.button("Run Agent!"):
                 api_response = requests.post(
                     BACKEND_URL,
                     headers={"Content-Type": "application/json"},
-                    data=json.dumps(payload) # Send data as JSON
+                    data=json.dumps(payload)
                 )
 
-                # Check if the request was successful (status code 200)
                 api_response.raise_for_status()
                 if api_response.status_code == 200:
                     response_data = api_response.json()
